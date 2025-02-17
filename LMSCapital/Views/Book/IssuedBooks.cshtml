@@ -1,0 +1,88 @@
+﻿@model List<LMSCapital.Models.Db.IssuedBook>
+@{
+    ViewData["Title"] = "Issued Books";
+}
+
+
+<!--###########################################-->
+<h1>Issued Books</h1>
+<p class="text-success">@TempData["Message"]</p>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Issue Id</th>
+            <th>Book</th>
+            <th>User</th>
+            <th>Issued Date</th>
+            <th>Returned On</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var issued in Model)
+        {
+            if (issued.IsReturned == false)
+            {
+                <tr>
+                    <td>@issued.Id</td>
+                    <td>@issued.Book?.Title (Id: @issued.BookId)</td>
+                    <td>@issued.User?.Name (Id: @issued.UserId)</td>
+                    <td>@issued.IssueDate</td>
+                    @if (issued.ReturnDate != null)
+                    {
+                        <td class="text-success">@issued.ReturnDate</td>
+                    }
+                    else
+                    {
+                        <td class="text-warning">Pending Return</td>
+                    }
+                    <td>@Html.ActionLink("Return", "Return", "Book", new { issueId = issued.Id }, new { @class = "btn btn-outline-warning btn-sm" })</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+
+<!--###########################################-->
+<h1>Returned Books</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Issue Id</th>
+            <th>Book</th>
+            <th>User</th>
+            <th>Issued Date</th>
+            <th>Returned On</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var issued in Model)
+        {
+            if (issued.IsReturned == true)
+            {
+                <tr>
+                    <td>@issued.Id</td>
+                    <td>@issued.Book?.Title (Id: @issued.BookId)</td>
+                    <td>@issued.User?.Name (Id: @issued.UserId)</td>
+                    <td>@issued.IssueDate</td>
+                    @if (issued.ReturnDate != null)
+                    {
+                        <td class="text-success">@issued.ReturnDate</td>
+                    }
+                    else
+                    {
+                        <td class="text-warning">Pending Return</td>
+                    }
+                    <td><p class="text-success">Returned</p></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

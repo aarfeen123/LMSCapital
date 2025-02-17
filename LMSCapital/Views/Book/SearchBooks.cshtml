@@ -1,0 +1,47 @@
+﻿@model List<LMSCapital.Models.Db.Book>
+@{
+    ViewData["Title"] = "Searched Books";
+}
+
+
+<div class="container d-flex">
+    <div><h1>Searched Books List</h1></div>
+    <div class="mx-5 mt-2">
+        <form asp-controller="Book" asp-action="SearchBooks" method="get">
+            <div class="d-flex">
+                <input type="text" class="form-control" name="searchString" placeholder="Search Books..." />
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Book Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Total Copies</th>
+            <th>Available Copies</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.BookId</td>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.ISBN</td>
+                <td>@book.TotalCopies</td>
+                <td>@book.AvailableCopies</td>
+                <td>@Html.ActionLink("View", "Details", "Book", new { book.BookId }, new { @class = "text-decoration-none" })</td>
+            </tr>
+        }
+    </tbody>
+</table>

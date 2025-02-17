@@ -1,0 +1,54 @@
+﻿@model List<LMSCapital.Models.Db.Book>
+@{
+    ViewData["Title"] = "Books";
+}
+
+
+<div class="d-flex">
+    <div><h1>Book List</h1></div>
+    <div class="mx-5 mt-2">
+        <form asp-controller="Book" asp-action="SearchBooks" method="get">
+            <div class="d-flex">
+                <input type="text" class="form-control" name="searchString" placeholder="Search Books..."/>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+            
+        </form>
+    </div>
+    <div class="mt-2">
+        <a class="btn btn-primary text-decoration-none text-white" asp-area="" asp-controller="Book" asp-action="Add">Add Book + </a>
+    </div>
+</div>
+@if (TempData["BookId"] != null)
+{
+    <p class="text-success">@TempData["Message"]</p>
+    <p class="text-primary">Book Id: @TempData["BookId"], Title: @TempData["Title"]</p>
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Book Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Total Copies</th>
+            <th>Available Copies</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+        <tr>
+            <td>@book.BookId</td>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.ISBN</td>
+            <td>@book.TotalCopies</td>
+            <td>@book.AvailableCopies</td>
+            <td>@Html.ActionLink("View", "Details", "Book", new { book.BookId }, new { @class = "text-decoration-none" })</td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿@model LMSCapital.Models.BookAndUsersViewModel
+@{
+    ViewData["Title"] = "Issue Book";
+}
+
+<h1>Issue Book</h1>
+@if (TempData["Message"] != null)
+{
+    <p class="text-danger">@TempData["Message"]</p>
+}
+
+@if(Model.Books!=null && Model.Users!=null)
+{
+    <form method="post" action="Issue">
+        <div class="mb-3">
+            <label for="BookId" class="form-label">Book Id</label>
+            <input type="number" class="form-control" asp-for="Books.BookId" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="Title" class="form-label">Title</label>
+            <input type="text" class="form-control" asp-for="Books.Title" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="UserId" class="form-label">Select User</label>
+            <select class="form-control" name="UserId" asp-items="@(new SelectList(Model.Users, "UserId", "Name"))">
+                <option value=""> Select a User </option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Issue</button>
+    </form>
+}

@@ -1,0 +1,40 @@
+﻿@model List<LMSCapital.Models.Db.User>
+@{
+    ViewData["Title"] = "Users";
+}
+
+
+
+<div class="d-flex">
+    <div class="me-5"><h1>User List</h1></div>
+    <div class="mt-2">
+        <a class="btn btn-primary text-decoration-none text-white" asp-area="" asp-controller="User" asp-action="Add">Add User + </a>
+    </div>
+</div>
+@if (TempData["UserId"] != null)
+{
+    <p class="text-success">@TempData["Message"]</p>
+    <p class="text-primary">User Id: @TempData["UserId"], Name: @TempData["Name"]</p>
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Enrollment No</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserId</td>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.EnrollmentNo</td>
+            </tr>
+        }
+    </tbody>
+</table>

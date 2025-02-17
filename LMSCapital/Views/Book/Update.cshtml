@@ -1,0 +1,31 @@
+﻿@model LMSCapital.Models.Db.Book
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<h1>Update Book Details</h1>
+<form method="post" action="Update">
+    <div class="mb-3">
+        <label for="BookId" class="form-label">BookId</label>
+        <input type="number" class="form-control" asp-for="BookId" value="@Model.BookId" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" asp-for="Title" value="@Model.Title">
+    </div>
+    <div class="mb-3">
+        <label for="Author" class="form-label">Author</label>
+        <input type="text" class="form-control" asp-for="Author" value="@Model.Author">
+    </div>
+    <div class="mb-3">
+        <label for="ISBN" class="form-label">ISBN</label>
+        <input type="number" class="form-control" asp-for="ISBN" value="@Model.ISBN">
+    </div>
+    <div class="mb-3">
+        <label for="TotalCopies" class="form-label">TotalCopies</label>
+        <input type="number" class="form-control" asp-for="TotalCopies" value="@Model.TotalCopies">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

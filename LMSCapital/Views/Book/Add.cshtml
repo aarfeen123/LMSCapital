@@ -1,0 +1,30 @@
+﻿@model LMSCapital.Models.AddBookViewModel
+@{
+    ViewData["Title"] = "Add Book";
+}
+
+<h1>Add New Book</h1>
+@if (TempData["Message"] != null)
+{
+    <p class="text-danger">@TempData["Message"]</p>
+}
+<form method="post" action="Add">
+    <div class="mb-3">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+    </div>
+    <div class="mb-3">
+        <label for="Author" class="form-label">Author</label>
+        <input type="text" class="form-control" asp-for="Author">
+    </div>
+    <div class="mb-3">
+        <label for="ISBN" class="form-label">ISBN</label>
+        <input type="number" class="form-control" asp-for="ISBN">
+    </div>
+    <div class="mb-3">
+        <label for="TotalCopies" class="form-label">TotalCopies</label>
+        <input type="number" class="form-control" asp-for="TotalCopies">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

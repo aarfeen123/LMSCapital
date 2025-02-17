@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\accur\\source\\repos\\LMSCapital\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0822D3-2A4C-4D2A-B57A-35004305CF00}|LMSCapital\\LMSCapital.csproj|c:\\users\\accur\\source\\repos\\lmscapital\\lmscapital\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0822D3-2A4C-4D2A-B57A-35004305CF00}|LMSCapital\\LMSCapital.csproj|solutionrelative:lmscapital\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0822D3-2A4C-4D2A-B57A-35004305CF00}|LMSCapital\\LMSCapital.csproj|c:\\users\\accur\\source\\repos\\lmscapital\\lmscapital\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0822D3-2A4C-4D2A-B57A-35004305CF00}|LMSCapital\\LMSCapital.csproj|solutionrelative:lmscapital\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\accur\\source\\repos\\LMSCapital\\LMSCapital\\Program.cs",
+              "RelativeDocumentMoniker": "LMSCapital\\Program.cs",
+              "ToolTip": "C:\\Users\\accur\\source\\repos\\LMSCapital\\LMSCapital\\Program.cs",
+              "RelativeToolTip": "LMSCapital\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T04:22:37.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\accur\\source\\repos\\LMSCapital\\LMSCapital\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LMSCapital\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\accur\\source\\repos\\LMSCapital\\LMSCapital\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LMSCapital\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T03:46:30.666Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

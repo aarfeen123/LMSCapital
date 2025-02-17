@@ -1,0 +1,25 @@
+﻿@model LMSCapital.Models.Db.Book
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+
+<h1>Book Details</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr><th>Book</th><th>Credentials</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>BookId</td><td>@Model.BookId</td></tr>
+        <tr><td>Title</td><td>@Model.Title</td></tr>
+        <tr><td>Author</td><td>@Model.Author</td></tr>
+        <tr><td>ISBN</td><td>@Model.ISBN</td></tr>
+        <tr><td>Total Copies</td><td>@Model.TotalCopies</td></tr>
+        <tr><td>Available Copies</td><td>@Model.AvailableCopies</td></tr>
+    </tbody>
+</table>
+@Html.ActionLink("Update", "Update", "Book", new { Model.BookId }, new { @class = "btn btn-primary" })
+@Html.ActionLink("Delete", "Delete", "Book", new { Model.BookId }, new { @class = "btn btn-danger" })
+@Html.ActionLink("Issue", "Issue", "Book", new { Model.BookId }, new { @class = "btn btn-success" })
+
